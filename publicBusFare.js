@@ -19,28 +19,28 @@
 //     }
 // }
 
-// function publicBusFare(participants) {
-//     const perBus = 50;
-//     const perMicro = 11;
-//     const perPublicBusFare = 250;
-
-//     // const totalBus = Math.floor(participants / perBus);
-//     // const totalMicro = Math.floor((participants % perBus) / perMicro);
-//     const totalPublicBusFare = ((participants % perBus) % perMicro) * perPublicBusFare;
-
-//     // return { totalBus, totalMicro, totalPublicBusFare };
-//     return { totalPublicBusFare };
-// }
-
 function publicBusFare(participants) {
     const perBus = 50;
     const perMicro = 11;
     const perPublicBusFare = 250;
 
+    const totalBus = Math.floor(participants / perBus);
+    const totalMicro = Math.floor((participants % perBus) / perMicro);
     const totalPublicBusFare = ((participants % perBus) % perMicro) * perPublicBusFare;
 
-    return totalPublicBusFare;
+    return { totalBus, totalMicro, totalPublicBusFare };
+    // return { totalPublicBusFare };
 }
+
+// function publicBusFare(participants) {
+//     const perBus = 50;
+//     const perMicro = 11;
+//     const perPublicBusFare = 250;
+
+//     const totalPublicBusFare = ((participants % perBus) % perMicro) * perPublicBusFare;
+
+//     return {totalPublicBusFare};
+// }
 
 
 console.log(publicBusFare(50)); // output: 0
